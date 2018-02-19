@@ -9,7 +9,7 @@ const apiURT: String = 'http://localhost:8000/api/chat';
   const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    'Authorization': localStorage.token,
+    'Authorization': localStorage.getItem('token'),
   })
 };
 
@@ -22,7 +22,6 @@ export class ChatAppServiceService {
   
 
   getMessages(){
-    console.log(httpOptions)
      return this.http   
            .get(apiURT + '/user', httpOptions)
            .toPromise()

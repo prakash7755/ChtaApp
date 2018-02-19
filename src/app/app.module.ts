@@ -13,6 +13,8 @@ import { UserChatMsgComponent } from './user-chat-msg/user-chat-msg.component';
 
 import { UserServiceService } from './services/user-service/user-service.service';
 import { ChatAppServiceService } from './services/chat-app-service/chat-app-service.service';
+import { AuthGuardService } from './services/auth-guard/auth-guard.service';
+import { CanActivateService } from './services/auth-guard/can-activate.service';
 
 
 
@@ -30,7 +32,17 @@ import { ChatAppServiceService } from './services/chat-app-service/chat-app-serv
     FormsModule,
     HttpClientModule,
   ],
-  providers: [UserServiceService, ChatAppServiceService],
+  providers: [UserServiceService, ChatAppServiceService, AuthGuardService, CanActivateService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+  constructor(private userAuth: AuthGuardService){}
+
+ logoutUser(){
+    console.log('logout');
+   
+   // this.userAuth.logout();
+ }
+
+}

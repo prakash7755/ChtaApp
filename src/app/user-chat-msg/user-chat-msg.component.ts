@@ -32,7 +32,6 @@ export class UserChatMsgComponent implements OnInit {
     })
     .catch(err =>{
       console.log('Get All Authorization ')
-      this.router.navigate(['/login']);
     })
   }
     
@@ -44,7 +43,6 @@ export class UserChatMsgComponent implements OnInit {
        })
        .catch(err => {
        	console.log('chat error Authorization');
-       this.router.navigate(['/login']);
        })
     }
 
