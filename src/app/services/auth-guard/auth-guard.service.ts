@@ -7,7 +7,6 @@ export class AuthGuardService {
 
 
   logout(){
-    console.log('logout');
   	return localStorage.removeItem('token')
   }
 

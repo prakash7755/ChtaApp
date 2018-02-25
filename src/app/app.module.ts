@@ -15,6 +15,7 @@ import { UserServiceService } from './services/user-service/user-service.service
 import { ChatAppServiceService } from './services/chat-app-service/chat-app-service.service';
 import { AuthGuardService } from './services/auth-guard/auth-guard.service';
 import { CanActivateService } from './services/auth-guard/can-activate.service';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -24,7 +25,8 @@ import { CanActivateService } from './services/auth-guard/can-activate.service';
     AppComponent,
     LoginComponent,
     UserRegisterComponent,
-    UserChatMsgComponent
+    UserChatMsgComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -36,13 +38,5 @@ import { CanActivateService } from './services/auth-guard/can-activate.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-  
-  constructor(private userAuth: AuthGuardService){}
-
- logoutUser(){
-    console.log('logout');
-   
-   // this.userAuth.logout();
- }
-
+ 
 }
